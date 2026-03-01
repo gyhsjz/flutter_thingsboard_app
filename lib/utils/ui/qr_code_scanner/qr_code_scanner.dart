@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:thingsboard_app/config/themes/app_colors.dart';
@@ -120,6 +121,26 @@ class QrCodeScannerPage extends HookWidget {
                 ),
               ),
               actions: <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.image),
+                  onPressed: () async {
+                    final ImagePicker picker = ImagePicker();
+                    final XFile? image = await picker.pickImage(
+                      source: ImageSource.gallery,
+                    );
+                    if (image != null) {
+                      final bool success = await controller.analyzeImage(
+                        image.path,
+                      );
+                      if (!success && context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('未发现二维码')),
+                        );
+                      }
+                    }
+                  },
+                  tooltip: S.of(context).selectFromGallery,
+                ),
                 IconButton(
                   icon: Icon(
                     isTorchActive.value ? Icons.flash_off : Icons.flash_on,

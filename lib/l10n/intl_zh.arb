@@ -422,5 +422,6 @@
   "phoneIsInvalid": "电话号码格式无效",
   "addVerificationMethod": "添加验证方式",
   "areYouSureYouWantToExit": "您确定要退出吗？",
-  "confirmToCloseTheApp": "确认关闭应用"
+  "confirmToCloseTheApp": "确认关闭应用",
+  "selectFromGallery": "从相册选取"
 }
