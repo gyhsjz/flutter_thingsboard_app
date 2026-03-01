@@ -24,15 +24,8 @@ def getDartDefineValue = { key ->
     }
     return dartDefines[key]
 }
-def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
-if (flutterVersionCode == null) {
-    flutterVersionCode = '1'
-}
-
-def flutterVersionName = localProperties.getProperty('flutter.versionName')
-if (flutterVersionName == null) {
-    flutterVersionName = '1.0'
-}
+def flutterVersionCode = '1'
+def flutterVersionName = '1.0'
 def customScheme = 'org.thingsboard.app.auth'
 def customLabel = 'Electric Machinery'
 def appLinksUrlHost = 'demo.thingsboard.io'
