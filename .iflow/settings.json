@@ -1,1 +1,18 @@
-{"mcpServers": {"serial": {"command": "D:\\gemini\\thingsboard-app\\serial-mcp-server\\target\\release\\serial-mcp-server.exe", "args": [], "env": {"RUST_LOG": "info"}}}}
+{
+  "mcpServers": {
+    "serial": {
+      "command": "D:\\gemini\\thingsboard-app\\serial-mcp-server\\target\\release\\serial-mcp-server.exe",
+      "args": [],
+      "env": {
+        "RUST_LOG": "info"
+      }
+    },
+    "ssh-mcp-server": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@iflow-mcp/ssh-mcp-server"
+      ]
+    }
+  }
+}
