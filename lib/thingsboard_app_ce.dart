@@ -36,6 +36,7 @@ class ThingsboardApp extends HookConsumerWidget {
           themeMode: ThemeMode.light,
           theme: tbCeTheme,
           darkTheme: tbDarkTheme,
+          locale: const Locale('zh'),
           routerConfig: router,
         ),
    )

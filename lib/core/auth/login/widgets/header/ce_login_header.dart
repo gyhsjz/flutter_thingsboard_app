@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:thingsboard_app/constants/assets_path.dart';
-import 'package:thingsboard_app/utils/utils.dart';
+import 'package:thingsboard_app/config/themes/tb_text_styles.dart';
+import 'package:thingsboard_app/generated/l10n.dart';
 
 class LoginHeader extends StatelessWidget {
   const LoginHeader({super.key});
@@ -13,10 +12,12 @@ class LoginHeader extends StatelessWidget {
       padding: const EdgeInsets.only( left: 12),
       child: Row(
         children: [
-          SvgPicture.asset(
-            ThingsboardImage.thingsBoardWithTitle,
-            height: 30,
-            colorFilter: Utils.toColorFilter(theme.primaryColor),
+          Text(
+            S.of(context).appTitle,
+            style: TbTextStyles.titleMedium.copyWith(
+              color: theme.primaryColor,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ],
       ),

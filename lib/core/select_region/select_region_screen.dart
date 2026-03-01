@@ -18,8 +18,15 @@ class SelectRegionScreen extends TbContextStatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            SvgPicture.asset(ThingsboardImage.thingsboardBigLogo),
-            const SizedBox(height: 166),
+            const SizedBox(height: 48),
+            Text(
+              S.of(context).appTitle,
+              style: TbTextStyles.titleLarge.copyWith(
+                color: Theme.of(context).primaryColor,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 118),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
