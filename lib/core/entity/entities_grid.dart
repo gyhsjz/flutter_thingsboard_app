@@ -56,8 +56,8 @@ class _EntitiesGridState<T, P> extends BaseEntitiesState<T, P> {
                 onEntityTap: (i) => widget.onEntityTap(i, ref),
                 settings: widget.entityGridCardSettings(item),
               ),
-              firstPageErrorIndicatorBuilder: (context) => Text("first page error"),
-              newPageErrorIndicatorBuilder: (context) => Text("new page error"),
+              firstPageErrorIndicatorBuilder: (context) => Text(S.of(context).failedToLoadTheList),
+              newPageErrorIndicatorBuilder: (context) => Text(S.of(context).failedToLoadTheList),
               firstPageProgressIndicatorBuilder:
                   firstPageProgressIndicatorBuilder,
               newPageProgressIndicatorBuilder: newPageProgressIndicatorBuilder,

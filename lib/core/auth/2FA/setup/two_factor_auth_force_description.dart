@@ -59,7 +59,7 @@ class TwoFactorAuthForceDescription extends StatelessWidget {
                       '${LoginRoutes.login}${LoginRoutes.mfaConfigure}?force=true',
                     );
                   },
-                  child: const Text('Set up verification method'),
+                  child: Text(S.of(context).setUpAVerificationMethod),
                 ),
               ),
             ),

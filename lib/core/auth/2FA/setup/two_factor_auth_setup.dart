@@ -95,7 +95,7 @@ class TwoFactorAuthSetup extends HookConsumerWidget {
                 ],
               ),
           loading: () => const SizedBox.shrink(),
-          error: (error, stack) => Center(child: Text('Error: $error')),
+          error: (error, stack) => Center(child: Text('错误: $error')),
         ),
       );
     }

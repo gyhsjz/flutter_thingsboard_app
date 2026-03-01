@@ -21,7 +21,7 @@ class MorePageFooter extends StatelessWidget {
     final ver = getIt<IDeviceInfoService>().getBuildVersion();
     if (EnvironmentVariables.showAppVersion) {
       // translate-me-ignore-next-line
-      return Text('version: $ver');
+      return Text('版本: $ver');
     }
     return const SizedBox();
   }

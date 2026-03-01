@@ -122,7 +122,7 @@ class BackupCodeConfigureWidget
                           );
                         },
                         icon: const Icon(Icons.download),
-                        label: const Text('Download (txt)'),
+                        label: const Text('下载 (txt)'),
                       ),
                     ),
                   ],
