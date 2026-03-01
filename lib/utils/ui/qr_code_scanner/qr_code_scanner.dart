@@ -129,12 +129,10 @@ class QrCodeScannerPage extends HookWidget {
                       source: ImageSource.gallery,
                     );
                     if (image != null) {
-                      final barcodes = await controller.analyzeImage(
-                        image.path,
-                      );
-                      if (barcodes != null && barcodes.barcodes.isNotEmpty) {
+                      final result = await controller.analyzeImage(image.path);
+                      if (result != null && result.barcodes.isNotEmpty) {
                         if (context.mounted) {
-                          context.pop(barcodes.barcodes.first);
+                          context.pop(result.barcodes.first);
                         }
                       } else if (context.mounted) {
                         ScaffoldMessenger.of(context).showSnackBar(
