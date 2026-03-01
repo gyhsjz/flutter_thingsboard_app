@@ -1,0 +1,1 @@
+{"mcpServers": {"serial": {"command": "D:\\gemini\\thingsboard-app\\serial-mcp-server\\target\\release\\serial-mcp-server.exe", "args": [], "env": {"RUST_LOG": "info"}}}}
