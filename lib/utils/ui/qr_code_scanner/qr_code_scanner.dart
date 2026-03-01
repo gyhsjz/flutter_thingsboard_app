@@ -129,10 +129,14 @@ class QrCodeScannerPage extends HookWidget {
                       source: ImageSource.gallery,
                     );
                     if (image != null) {
-                      final bool success = await controller.analyzeImage(
+                      final BarcodeCapture? barcodes = await controller.analyzeImage(
                         image.path,
                       );
-                      if (!success && context.mounted) {
+                      if (barcodes != null && barcodes.barcodes.isNotEmpty) {
+                        if (context.mounted) {
+                          context.pop(barcodes.barcodes.first);
+                        }
+                      } else if (context.mounted) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(content: Text('未发现二维码')),
                         );
