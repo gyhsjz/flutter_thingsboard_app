@@ -34,12 +34,13 @@ jobs:
 
       - name: Generate files (build_runner and intl)
         run: |
+          rm -rf lib/generated
           flutter pub run intl_utils:generate
           dart run build_runner build --delete-conflicting-outputs
 
       - name: Build APK
         run: |
-          flutter build apk --release --no-tree-shake-icons --verbose
+          flutter build apk --release --no-tree-shake-icons
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
