@@ -122,28 +122,6 @@ class QrCodeScannerPage extends HookWidget {
               ),
               actions: <Widget>[
                 IconButton(
-                  icon: const Icon(Icons.image),
-                  onPressed: () async {
-                    final ImagePicker picker = ImagePicker();
-                    final XFile? image = await picker.pickImage(
-                      source: ImageSource.gallery,
-                    );
-                    if (image != null) {
-                      final result = await controller.analyzeImage(image.path);
-                      if (result != null && result.barcodes.isNotEmpty) {
-                        if (context.mounted) {
-                          context.pop(result.barcodes.first);
-                        }
-                      } else if (context.mounted) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('未发现二维码')),
-                        );
-                      }
-                    }
-                  },
-                  tooltip: S.of(context).selectFromGallery,
-                ),
-                IconButton(
                   icon: Icon(
                     isTorchActive.value ? Icons.flash_off : Icons.flash_on,
                   ),
