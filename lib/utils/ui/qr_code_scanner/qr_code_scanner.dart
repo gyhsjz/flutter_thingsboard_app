@@ -129,7 +129,7 @@ class QrCodeScannerPage extends HookWidget {
                       source: ImageSource.gallery,
                     );
                     if (image != null) {
-                      final BarcodeCapture? barcodes = await controller.analyzeImage(
+                      final barcodes = await controller.analyzeImage(
                         image.path,
                       );
                       if (barcodes != null && barcodes.barcodes.isNotEmpty) {
